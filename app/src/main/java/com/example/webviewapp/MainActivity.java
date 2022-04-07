@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         myWebView = findViewById(R.id.my_webview);
         myWebView.setWebViewClient(new WebViewClient()); // Do not open in Chrome!
+        myWebView.getSettings().setJavaScriptEnabled(true);
         myWebView.loadUrl("https://his.se");
-
 
         /*
         * Rename your App. Tip: Values->Strings
