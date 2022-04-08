@@ -3,7 +3,7 @@
 
 **Skriv din rapport här!**
 
-
+Förklaring på det jag har gjort och hur detta blir vid exekvering finns längre ner.
 
 ## Följande grundsyn gäller dugga-svar:
 
@@ -15,10 +15,41 @@
 
 Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
 
+Här gjorde jag det möjligt för appen att använda sig av internet.
+```
+<uses-permission android:name="android.permission.INTERNET" />
 ```
 
-}
+Här skapar vi en WebView variabel som refererar till ett WebView-element. Vi skapar en webviewclient som enablear javascript.
 ```
+private WebView myWebView;
+
+-||- 
+
+myWebView = findViewById(R.id.my_webview);
+myWebView.setWebViewClient(new WebViewClient()); 
+myWebView.getSettings().setJavaScriptEnabled(true);
+```
+
+Dessa två funktioner körs beroende på ifall man har "External" eller "Internal" valt. Den ena laddar en extern sida och den andra en intern fil med html kod.
+```
+    public void showExternalWebPage(){
+        myWebView.loadUrl("https://his.se");
+    }
+
+    public void showInternalWebPage(){
+        myWebView.loadUrl("file:///android_asset/about.html");
+    }
+```
+
+Här skapar vi ett webview element med id "my_webview".
+```
+<WebView
+    android:id="@+id/my_webview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+```
+
 
 Bilder läggs i samma mapp som markdown-filen.
 
