@@ -6,11 +6,11 @@ Här gjorde jag det möjligt för appen att använda sig av internet.
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-Här skapar vi en WebView variabel som refererar till ett WebView-element. Vi skapar en webviewclient som enablear javascript.
+Här skapar vi en WebView. Vi skapar sedan en webviewclient som enablear javascript.
 ```
 private WebView myWebView;
 
--||- 
+...
 
 myWebView = findViewById(R.id.my_webview);
 myWebView.setWebViewClient(new WebViewClient()); 
@@ -35,9 +35,6 @@ Här skapar vi ett webview element med id "my_webview".
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
 ```
-
-
-Bilder läggs i samma mapp som markdown-filen.
 
 ![](internal.png)
 
